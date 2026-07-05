@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devis Vitrier</title><link rel="manifest" href="manifest.json">
+<style>
+body { font-family: Arial; background: #f2f2f2; padding: 20px; }
+.container { background: white; padding: 20px; border-radius: 12px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+h1 { color: #0056b3; text-align: center; }
+label { font-weight: bold; margin-top: 10px; display: block; }
+input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
+button { width: 100%; padding: 12px; background: #0056b3; color: white; border: none; border-radius: 8px; font-size: 18px; margin-top: 15px; }
+.result { margin-top: 20px; padding: 15px; background: #e6f0ff; border-radius: 8px; text-align: center; font-size: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🧊 Devis Vitrier</h1>
+
+<label>Largeur (cm)</label>
+<input type="number" id="largeur" placeholder="Ex: 55">
+
+<label>Hauteur (cm)</label>
+<input type="number" id="hauteur" placeholder="Ex: 75">
+
+<label>Prix au m² (FCFA)</label>
+<input type="number" id="prix" value="22000">
+
+<label>Nombre de vitres</label>
+<input type="number" id="quantite" value="1">
+
+<button onclick="calculer()">Calculer</button>
+
+<div class="result" id="resultat">Prix Total : 0 FCFA</div>
+</div>
+
+<script>
+function calculer() {
+let L = document.getElementById('largeur').value / 100; // cm vers m
+let H = document.getElementById('hauteur').value / 100; // cm vers m
+let prixM2 = document.getElementById('prix').value;
+let qte = document.getElementById('quantite').value;
+
+let surface = L * H;
+let total = surface * prixM2 * qte;
+
+document.getElementById('resultat').innerText =
+"Prix Total : " + total.toLocaleString() + " FCFA";
+}
+</script>
+</body>
+</html>g() + " FCFA";
+}
+</script>
+</body>
+</html>
